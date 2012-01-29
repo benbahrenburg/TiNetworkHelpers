@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.01
+apiversion: 2
+description: benCoding.Com provides access to network helpers for CarrierInfo, CurrentNetworkInfo, Apple's Reachability, and more
+author: benCoding.Com
+license: benCoding.Com Network Helpers is licensed under the OSI approved Apache Public License (version 2). Please see the LICENSE file for specific details.
+copyright: Copyright (c) 2012 by benCoding.Com
+
+
+# these should not be edited
+name: iosnetwork
+moduleid: bencoding.network
+guid: 223684f6-a21f-451f-aa78-d04eef3781c1
+platform: iphone
+minsdk: 1.8.1
