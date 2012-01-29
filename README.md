@@ -13,7 +13,7 @@ See the readme in each project for how to implement and use.
 
 ## Projects:
 <b>IOSNetwork</b> Project that provides iOS specific Network Helpers. See 
-[readme](http://) for details.
+[readme](https://github.com/benbahrenburg/TiNetworkHelpers/tree/master/iOSNetwork) for details.
 
 ### Twitter
 
