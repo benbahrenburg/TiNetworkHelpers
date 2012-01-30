@@ -3,9 +3,11 @@ Ti.API.info("module is => " + benCodingNetwork);
 
 Ti.API.info("Create a new Carrier Info Object");
 var carrierInfo = benCodingNetwork.createCarrierInfo();
-Ti.API.info("Get carrier name => " + carrierInfo.simCarrierName);
-Ti.API.info("Get mobile country code => " + carrierInfo.simCarrierCountryCode);
-Ti.API.info("Get mobile network code => " + carrierInfo.simCarrierNetworkCode);
+Ti.API.info("Get carrier name => " + carrierInfo.carrierName);
+Ti.API.info("Get mobile country code => " + carrierInfo.mobileCountryCode);
+Ti.API.info("Get mobile network code => " + carrierInfo.mobileNetworkCode);
+Ti.API.info("Get ISO country code for cellular service provider => " + carrierInfo.isoCountryCode);
+Ti.API.info("Mobile service provider supports VOIP => " + carrierInfo.allowsVOIP);
 
 Ti.API.info("Create a new Current Network Info Object");
 var currentNetwork = benCodingNetwork.createCurrentNetwork();
@@ -44,7 +46,7 @@ Ti.API.info("Reachable via => " + reachableType);
 var win  = Ti.UI.createWindow({backgroundColor:'#fff'});
 
 var container = Ti.UI.createView({
-	top:40,
+	top:10,
 	layout:'vertical'
 });
 win.add(container);
@@ -52,7 +54,7 @@ win.add(container);
 var carrierLabel = Ti.UI.createLabel({
 	color:'#000',
 	left:10,
-	text:'Carrier Name: ' + carrierInfo.simCarrierName,
+	text:'Carrier Name: ' + carrierInfo.carrierName,
 	height:40,
 	width:'auto',
 	textAlign:'left',
@@ -67,7 +69,7 @@ var mccLabel = Ti.UI.createLabel({
 	top:20,
 	color:'#000',
 	left:10,
-	text:'Carrier Country Code: ' + carrierInfo.simCarrierCountryCode,
+	text:'Carrier Country Code: ' + carrierInfo.mobileCountryCode,
 	height:40,
 	width:'auto',
 	textAlign:'left',
@@ -82,7 +84,7 @@ var nccLabel = Ti.UI.createLabel({
 	top:20,
 	color:'#000',
 	left:10,
-	text:'Network Country Code: ' + carrierInfo.simCarrierNetworkCode,
+	text:'Network Country Code: ' + carrierInfo.mobileNetworkCode,
 	height:40,
 	width:'auto',
 	textAlign:'left',
@@ -92,6 +94,36 @@ var nccLabel = Ti.UI.createLabel({
 	}
 });
 container.add(nccLabel);
+
+var isoLabel = Ti.UI.createLabel({
+	top:20,
+	color:'#000',
+	left:10,
+	text:'Providers ISO Code: ' + carrierInfo.isoCountryCode,
+	height:40,
+	width:'auto',
+	textAlign:'left',
+	font:{
+		fontSize:16,
+		fontWeight:'bold'
+	}
+});
+container.add(isoLabel);
+
+var voipLabel = Ti.UI.createLabel({
+	top:20,
+	color:'#000',
+	left:10,
+	text:'Providers Supports VOIP: ' + carrierInfo.allowsVOIP,
+	height:40,
+	width:'auto',
+	textAlign:'left',
+	font:{
+		fontSize:16,
+		fontWeight:'bold'
+	}
+});
+container.add(voipLabel);
 
 var SSIDLabel = Ti.UI.createLabel({
 	top:20,

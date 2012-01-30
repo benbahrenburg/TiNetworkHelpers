@@ -1,10 +1,9 @@
-//
-//  Helpers.m
-//  iosnetwork
-//
-//  Created by Ben Bahrenburg on 1/28/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/**
+ * benCoding TiNetworkHelpers
+ * Copyright (c) 2009-2012 by Ben Bahrenburg. All Rights Reserved.
+ * Licensed under the terms of the Apache Public License
+ * Please see the LICENSE included with this distribution for details.
+ */
 
 #import "BencodingNetworkHelpers.h"
 

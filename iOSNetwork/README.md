@@ -2,8 +2,13 @@
 
 Welcome to the benCoding Network Helpers for Titanium project
 
+### Before you start
+* You need Titanium 1.8.1 or greater.  I recommend downloading the CI build available here.  When downloading please make sure you select the 1.8.X branch.  For instructions on how to install a CI Build please read [this](https://wiki.appcelerator.org/display/guides/Installing+Titanium+SDK+Continuous+Builds).
+* This module has been tested only on iOS 5.  There isn’t any iOS 5 specific features referenced, so it should work on iOS 4.3+.
+
 ### Setup 
 
+* Download the latest release from the releases folder ( or you can build it yourself )
 * Install the bencoding.network module. If you need help here is a "How To" [guide](https://wiki.appcelerator.org/display/guides/Configuring+Apps+to+Use+Modules). 
 * You can now use the module via the commonJS require method, example shown below.
 
@@ -32,22 +37,32 @@ var carrierInfo = benCodingNetwork.createCarrierInfo();
 <br />
 The following properties are currently available:
 
-<b>simCarrierName</b> - Provides access to the carrier name associated with the device's SIM.
+<b>carrierName</b> - Provides access to the carrier name associated with the device's SIM.
 Please find an example on how to create this below:
 <pre><code>
-Ti.API.info("Get carrier name => " + carrierInfo.simCarrierName);
+Ti.API.info("Get carrier name => " + carrierInfo.carrierName);
 </code></pre>
 <br />
-<b>simCarrierCountryCode</b> - Provides access to the carrier Mobile Country Codes (MCCs). This is the country code associated with the carrier on the SIM.  Here is a listing off all the Mobile Country Codes [wikipedia](http://en.wikipedia.org/wiki/List_of_mobile_country_codes)
+<b>mobileCountryCode</b> - Provides access to the carrier Mobile Country Codes (MCCs). This is the country code associated with the carrier on the SIM.  Here is a listing of all the Mobile Country Codes [wikipedia](http://en.wikipedia.org/wiki/List_of_mobile_country_codes)
 
 Below is a sample on how to use this feature.
 <pre><code>
-Ti.API.info("Get mobile country code => " + carrierInfo.simCarrierCountryCode);
+Ti.API.info("Get mobile country code => " + carrierInfo.mobileCountryCode);
 </code></pre>
 <br />
-<b>simCarrierNetworkCode</b> - Provides access to the carrier's Mobile Network Code. This is the network code associated with the carrier on the SIM.  Here is a listing off all the Mobile Network Codes for the US [wikipedia](http://en.wikipedia.org/wiki/List_of_mobile_network_codes_in_the_United_States)
+<b>mobileNetworkCode</b> - Provides access to the carrier's Mobile Network Code. This is the network code associated with the carrier on the SIM.  Here is a listing of all the Mobile Network Codes for the US [wikipedia](http://en.wikipedia.org/wiki/List_of_mobile_network_codes_in_the_United_States)
 <pre><code>
-Ti.API.info("Get mobile network code => " + carrierInfo.simCarrierNetworkCode);
+Ti.API.info("Get mobile network code => " + carrierInfo.mobileNetworkCode);
+</code></pre>
+<br />
+<b>isoCountryCode</b> - The ISO country code for the user’s cellular service provider. This is the carrier on the SIM.  Here is a listing of ISO codes [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1)
+<pre><code>
+Ti.API.info("Get ISO country code for cellular service provider => " + carrierInfo.isoCountryCode);
+</code></pre>
+<br />
+<b>allowsVOIP</b> - Indicates if the carrier allows VoIP calls to be made on its network.
+<pre><code>
+Ti.API.info("Mobile service provider supports VOIP => " + carrierInfo.allowsVOIP);
 </code></pre>
 <br />
 <h2>CurrentNetwork</h2>
@@ -95,7 +110,7 @@ Ti.API.info("Get reachabilityWithHostName => " + reachability.reachabilityWithHo
 </code></pre>
 <br />
 
-<b>hostNameReachableBy</b> - This method takes a host name, such as www.benCoding.com and returns a constant with how it is reachable.  Please find an example on how to create this below:
+<b>hostNameReachableBy</b> - This method takes a host name, such as www.apple.com and returns a constant with how it is reachable.  Please find an example on how to create this below:
 <pre><code>
 var hostReachableByType = reachability.hostNameReachableBy("www.apple.com");
 

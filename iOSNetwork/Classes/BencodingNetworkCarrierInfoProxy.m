@@ -1,6 +1,6 @@
 /**
- * Appcelerator Titanium Mobile
- * Copyright (c) 2009-2012 by Appcelerator, Inc. All Rights Reserved.
+ * benCoding TiNetworkHelpers
+ * Copyright (c) 2009-2012 by Ben Bahrenburg. All Rights Reserved.
  * Licensed under the terms of the Apache Public License
  * Please see the LICENSE included with this distribution for details.
  */
@@ -12,7 +12,7 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 @implementation BencodingNetworkCarrierInfoProxy
 
-@synthesize simCarrierName, simCarrierCountryCode, simCarrierNetworkCode;
+@synthesize allowsVOIP, carrierName, mobileCountryCode,mobileNetworkCode,isoCountryCode;
 
 
 -(id)init
@@ -21,32 +21,43 @@
 	// when the proxy is created.
     
 #if TARGET_IPHONE_SIMULATOR
-    simCarrierName = [@"simulator" retain];
-    simCarrierCountryCode = [informationUnknown retain];
-    simCarrierNetworkCode = [informationUnknown retain];
+    carrierName = [@"simulator" retain];
+    allowsVOIP =[NUMBOOL(NO) retain];
+    mobileCountryCode = [informationUnknown retain];
+    mobileNetworkCode = [informationUnknown retain];
+    isoCountryCode = [informationUnknown retain];
 #else
     CTTelephonyNetworkInfo *networkInfo = [[[CTTelephonyNetworkInfo alloc] init] autorelease];
     CTCarrier *carrier = [networkInfo subscriberCellularProvider];
     BencodingNetworkHelpers * helpers = [[BencodingNetworkHelpers alloc] init];
-    //Get the carrier name, if we can't find one then we use unknown
+    //The name of the user’s home cellular service provider. 
+    //If we can't find one then we use unknown
     //Usually unknown seems to always appear in the simulator
-    simCarrierName = [[helpers nilToKnown:[carrier carrierName]] retain];
+    carrierName = [[helpers nilToKnown:[carrier carrierName]] retain];
     
-    // Get mobile country code
+    //The mobile country code (MCC) for the user’s cellular service provider.
     //Usually unknown seems to always appear in the simulator
-    simCarrierCountryCode = [[helpers nilToKnown:[carrier mobileCountryCode]] retain];
+    mobileCountryCode = [[helpers nilToKnown:[carrier mobileCountryCode]] retain];
     
-    // Get mobile network code
+    //The mobile network code (MNC) for the user’s cellular service provider
     //Usually unknown seems to always appear in the simulator
-    simCarrierNetworkCode =[[helpers nilToKnown:[carrier mobileNetworkCode]] retain];
+    mobileNetworkCode =[[helpers nilToKnown:[carrier mobileNetworkCode]] retain];
 
+    //Populate the property with if the carrier supports VOIP
+    allowsVOIP=[NUMBOOL([carrier allowsVOIP]) retain];
+    
+    //The ISO country code for the user’s cellular service provider.
+    isoCountryCode = [[helpers nilToKnown:[carrier isoCountryCode]] retain];
+    
     [helpers release];
 #endif
     
     //Uncomment to made debugging easier
-    //NSLog(@"Carrier: %@", simCarrierName);
-    //NSLog(@"Mobile Country Code (MCC): %@", simCarrierCountryCode);
-    //NSLog(@"Mobile Network Code (MNC): %@", simCarrierNetworkCode);    
+    NSLog(@"Carrier: %@", carrierName);
+    NSLog(@"allowsVOIP: %@", allowsVOIP);
+    NSLog(@"Mobile Country Code (MCC): %@", mobileCountryCode);
+    NSLog(@"Mobile Network Code (MNC): %@", mobileNetworkCode);    
+    NSLog(@"Mobile Network Code (MNC): %@", isoCountryCode);
     
 	return [super init];
 }
@@ -55,10 +66,11 @@
 {
 	// This method is called from the dealloc method and is good place to
 	// release any objects and memory that have been allocated for the proxy.
-    
-    RELEASE_TO_NIL(simCarrierName);
-	RELEASE_TO_NIL(simCarrierCountryCode);
-    RELEASE_TO_NIL(simCarrierNetworkCode);    
+    RELEASE_TO_NIL(allowsVOIP); 
+    RELEASE_TO_NIL(carrierName);
+	RELEASE_TO_NIL(mobileCountryCode);
+    RELEASE_TO_NIL(mobileNetworkCode);    
+    RELEASE_TO_NIL(isoCountryCode);   
 	[super _destroy];
 }
 
