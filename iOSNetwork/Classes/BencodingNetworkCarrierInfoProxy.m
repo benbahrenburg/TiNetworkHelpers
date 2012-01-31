@@ -53,11 +53,11 @@
 #endif
     
     //Uncomment to made debugging easier
-    NSLog(@"Carrier: %@", carrierName);
-    NSLog(@"allowsVOIP: %@", allowsVOIP);
-    NSLog(@"Mobile Country Code (MCC): %@", mobileCountryCode);
-    NSLog(@"Mobile Network Code (MNC): %@", mobileNetworkCode);    
-    NSLog(@"Mobile Network Code (MNC): %@", isoCountryCode);
+    //NSLog(@"Carrier: %@", carrierName);
+    //NSLog(@"allowsVOIP: %@", allowsVOIP);
+    //NSLog(@"Mobile Country Code (MCC): %@", mobileCountryCode);
+    //NSLog(@"Mobile Network Code (MNC): %@", mobileNetworkCode);    
+    //NSLog(@"Carrier ISO Code (ISO): %@", isoCountryCode);
     
 	return [super init];
 }
