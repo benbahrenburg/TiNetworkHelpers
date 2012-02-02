@@ -1,7 +1,7 @@
 var benCodingNetwork = require('bencoding.network');
 Ti.API.info("module is => " + benCodingNetwork);
 
-Ti.API.info("Create a new Carrier Info Object");
+Ti.API.info("Create a Carrier Info Object");
 var carrierInfo = benCodingNetwork.createCarrierInfo();
 Ti.API.info("Get carrier name => " + carrierInfo.carrierName);
 Ti.API.info("Get mobile country code => " + carrierInfo.mobileCountryCode);
@@ -9,13 +9,13 @@ Ti.API.info("Get mobile network code => " + carrierInfo.mobileNetworkCode);
 Ti.API.info("Get ISO country code for cellular service provider => " + carrierInfo.isoCountryCode);
 Ti.API.info("Mobile service provider supports VOIP => " + carrierInfo.allowsVOIP);
 
-Ti.API.info("Create a new Current Network Info Object");
+Ti.API.info("Create a Current Network Info Object");
 var currentNetwork = benCodingNetwork.createCurrentNetwork();
 Ti.API.info("Get SSID => " + currentNetwork.SSID);
 Ti.API.info("Get BSSID => " + currentNetwork.BSSID);
 
 
-Ti.API.info("Create a new Reachability Object");
+Ti.API.info("Create a Reachability Object");
 var reachability = benCodingNetwork.createReachability();
 Ti.API.info("Get reachabilityWithHostName => " + reachability.reachabilityWithHostName("www.apple.com"));
 Ti.API.info("Get reachabilityForLocalWiFi => " + reachability.reachabilityForLocalWiFi());

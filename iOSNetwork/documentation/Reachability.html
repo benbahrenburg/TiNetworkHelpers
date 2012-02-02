@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Reachability Sub Module</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style2 {
+	font-size: large;
+	background-color: #E8E8E8;
+}
+.auto-style3 {
+	border-collapse: collapse;
+	border: 1px solid #000000;
+	margin-left: 40px;
+}
+.auto-style4 {
+	border: 1px solid #000000;
+}
+.auto-style5 {
+	border: 1px solid #000000;
+	font-size: large;
+	background-color: #E8E8E8;
+}
+</style>
+
+</head>
+
+<body>
+
+<h4><a href="index.html" style="text-decoration: none">benCoding.Network Titanium Module</a> </h4>
+<h1>Using the Reachability Sub Module</h1>
+
+<h2>Description</h2>
+<p>The Reachability component provides a wrapper for the Apple Reachability 
+module. For more about Reachability please see the Apple documentation
+<a href="http://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html">
+here</a>.</p>
+<p>For a detailed example please see the app.js included in the example folder.</p>
+<h2>Accessing the benCoding.Network Module</h2>
+<p>Before you can start using any of the module&#39;s functionality you need to use 
+the require keyword to make the module accessible from JavaScript. To access this module from JavaScript, you would do the following:</p>
+<div style="border-width: thin; border-style: solid; background-color: #E8E8E8;" class="auto-style1">
+	<p class="auto-style1"><strong>var networkHelpers = require(&#39;bencoding.network&#39;);</strong></p>
+</div>
+
+<h2>&nbsp;</h2>
+<h2>Creating an instance of the Reachability Sub Module</h2>
+<div style="border-width: thin; border-style: solid; background-color: #E8E8E8;" class="auto-style1">
+	<p class="auto-style1"><strong>Ti.API.info("Create a Reachability Object");
+    <br />
+	var reachability= networkHelpers.createReachability();</strong></p>
+</div>
+
+
+<h2>&nbsp;</h2>
+<h2>Object Methods</h2>
+
+<table class="auto-style3" style="width: 100%">
+	<tr>
+		<td class="auto-style5" style="width: 207px; height: 22px;"><strong>Method Name</strong></td>
+		<td class="auto-style2" style="height: 22px"><strong>Description</strong></td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 207px; height: 23px"><strong>
+		reachabilityWithHostName</strong></td>
+		<td class="auto-style4"  style="height: 23px">This method provides a 
+		boolean result if Local Wifi is enabled.</td>
+	</tr>
+	<tr>
+		<td class="auto-style4"  style="width: 207px; height: 23px"><strong>
+		reachabilityForLocalWiFi</strong></td>
+		<td class="auto-style4"  style="height: 23px">This method takes a host 
+		name, such as www.apple.com and returns a boolean result if the host is 
+		reachable.</td>
+	</tr>
+	<tr>
+		<td class="auto-style4"  style="width: 207px; height: 23px"><strong>
+		hostNameReachableBy</strong></td>
+		<td class="auto-style4"  style="height: 23px">This method takes a host 
+		name, such as www.benCoding.com and returns a constant with how it is 
+		reachable.&nbsp; This method returns a reachability constant shown 
+		below.</td>
+	</tr>
+	</table>
+
+<h2>Object Constants</h2>
+<table class="auto-style3" style="width: 100%">
+	<tr>
+		<td class="auto-style2" style="width: 295px; height: 22px;"><strong>
+		Constant Name</strong></td>
+		<td class="auto-style5" style="height: 22px"><strong>Description</strong></td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 295px; height: 23px">
+		NETWORK_STATUS_NOT_REACHABLE </td>
+		<td class="auto-style4"  style="height: 23px">Constant indicating that 
+		the host is not reachable. This constant is returned by the <strong>
+		hostNameReachableBy </strong>method.</td>
+	</tr>
+	<tr>
+		<td class="auto-style4"  style="width: 295px; height: 23px">
+		NETWORK_STATUS_WIFI</td>
+		<td class="auto-style4"  style="height: 23px">Constant indicating that 
+		the host is reachable by WiFi. This constant is returned by the <strong>
+		hostNameReachableBy </strong>method.</td>
+	</tr>
+	<tr>
+		<td class="auto-style4"  style="width: 295px; height: 23px">
+		NEWORK_STATUS_WWAN</td>
+		<td class="auto-style4"  style="height: 23px">Constant indicating that 
+		the host is reachable over the mobile network. This constant is returned 
+		by the <strong>
+		hostNameReachableBy </strong>method.</td>
+	</tr>
+	</table>
+
+<h2>Example</h2>
+<div style="border-width: thin; border-style: solid; background-color: #E8E8E8;">
+	<p class="auto-style1"><strong>var networkHelpers = require('bencoding.network');
+	<br /><br />
+	Ti.API.info("Create a Reachability Object"); 
+	<br />
+	var reachability= networkHelpers.createReachability();	<br /><br />
+	Ti.API.info("Get reachabilityWithHostName => " + reachability.reachabilityWithHostName("www.apple.com"));
+	<br /><br />
+	Ti.API.info("Get reachabilityForLocalWiFi => " + reachability.reachabilityForLocalWiFi());	
+	<br /><br />
+	Ti.API.info("Get check how we are able to reach apple.com ");	
+	<br />
+	var hostReachableByType = reachability.hostNameReachableBy("www.apple.com");
+	<br />
+	Ti.API.info("Apple.com was reachable by  => " + hostReachableByType );	
+	<br />
+	</strong></p>
+	<p class="auto-style1"><strong>//Create a JavaScript helper function</strong></p>
+	<p class="auto-style1"><strong>function getReachableType(findType){<br />
+	var results = &quot;Oops something went wrong&quot;;<br />
+	<br />
+	if(findType==reachability.NETWORK_STATUS_NOT_REACHABLE){<br />
+	results=&quot;Not Reachable&quot;;<br />
+	</strong>}<strong><br />
+	<br />
+	if(findType==reachability.NETWORK_STATUS_WIFI){<br />
+	results=&quot;WiFi Network&quot;;<br />
+	</strong>}<strong><br />
+	<br />
+	if(findType==reachability.NEWORK_STATUS_WWAN){<br />
+	results=&quot;Mobile Network&quot;;<br />
+	</strong>}<strong><br />
+	<br />
+	return results;<br />
+	};
+	
+	</strong></p>
+	<p class="auto-style1"><strong>var reachableType=getReachableType(hostReachableByType);
+	</strong></p>
+	<p class="auto-style1"><strong>Ti.API.info("Reachable via => " + reachableType);
+	</strong></p>
+
+</div>
+
+</body>
+
+</html>
