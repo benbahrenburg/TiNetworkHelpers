@@ -1,12 +1,12 @@
-<h2>Welcome to IOSNetwork</h2>
+<h1>benCoding.Network for iOS</h1>
 
 Welcome to the benCoding Network Helpers for Titanium project
 
-### Before you start
+<h2>Before you start</h2>
 * You need Titanium 1.8.1 or greater.  I recommend downloading the CI build available here.  When downloading please make sure you select the 1.8.X branch.  For instructions on how to install a CI Build please read [this](https://wiki.appcelerator.org/display/guides/Installing+Titanium+SDK+Continuous+Builds).
 * This module has been tested only on iOS 5.  There isn’t any iOS 5 specific features referenced, so it should work on iOS 4.3+.
 
-### Setup 
+<h2>Setup </h2>
 
 * Download the latest release from the releases folder ( or you can build it yourself )
 * Install the bencoding.network module. If you need help here is a "How To" [guide](https://wiki.appcelerator.org/display/guides/Configuring+Apps+to+Use+Modules). 
@@ -22,8 +22,8 @@ Now we have the module installed and avoid in our project we can start to use th
 
 Please see the example folder for a "how to" code example.
 
-Features
---------------------
+<h2>Features</h2>
+<hr />
 
 The benCoding Network Helpers provides access to CarrierInfo, CurrentNetworkInfo, 
 Apple's Reachability, and more.
@@ -136,23 +136,21 @@ var reachableType=getReachableType(hostReachableByType);
 Ti.API.info("Reachable via => " + reachableType);
 </code></pre>
 <br />
+ 
 
-### Twitter
-
-Please consider following the [@benCoding Twitter](http://www.twitter.com/benCoding) for updates 
-and more about Titanium.
-
-### Blog
-
-For module updates, Titanium tutorials and more please check out my blog at [benCoding.Com](http://benCoding.com). 
-
-### Licensing & Support
+<h2>Licensing & Support</h2>
 
 This project is licensed under the OSI approved Apache Public License (version 2). For details please see the license associated with each project.
 
 Developed by [Ben Bahrenburg](http://bahrenburgs.com) available on twitter [@benCoding](http://twitter.com/benCoding)
 
-Contributing
-------------
+<h2>Learn More</h2>
+<hr />
+<h3>Twitter</h3>
 
-The benCoding Network Helpers is a open source project.  Please help us by contributing to documentation, reporting bugs, forking the code to add features or make bug fixes or promoting on twitter, etc.
+Please consider following the [@benCoding Twitter](http://www.twitter.com/benCoding) for updates 
+and more about Titanium.
+
+<h3>Blog</h3>
+
+For module updates, Titanium tutorials and more please check out my blog at [benCoding.Com](http://benCoding.com). 
