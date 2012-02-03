@@ -33,22 +33,22 @@
 
 <h4><a href="index.html" style="text-decoration: none">benCoding.Network Titanium Module</a> </h4>
 <h1>Using the Reachability Sub Module</h1>
-
+<hr />
 <h2>Description</h2>
-<p>The Reachability component provides a wrapper for the Apple Reachability 
+<p class="auto-style1">The Reachability component provides a wrapper for the Apple Reachability 
 module. For more about Reachability please see the Apple documentation
 <a href="http://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html">
 here</a>.</p>
-<p>For a detailed example please see the app.js included in the example folder.</p>
+<p class="auto-style1">For a detailed example please see the app.js included in the example folder.</p>
 <h2>Accessing the benCoding.Network Module</h2>
-<p>Before you can start using any of the module&#39;s functionality you need to use 
+<p class="auto-style1">Before you can start using any of the module&#39;s functionality you need to use 
 the require keyword to make the module accessible from JavaScript. To access this module from JavaScript, you would do the following:</p>
 <div style="border-width: thin; border-style: solid; background-color: #E8E8E8;" class="auto-style1">
 	<p class="auto-style1"><strong>var networkHelpers = require(&#39;bencoding.network&#39;);</strong></p>
 </div>
 
-<h2>&nbsp;</h2>
 <h2>Creating an instance of the Reachability Sub Module</h2>
+<p class="auto-style1">The below example shows how to create the Reachability object that contains all of our Reachability methods</p>
 <div style="border-width: thin; border-style: solid; background-color: #E8E8E8;" class="auto-style1">
 	<p class="auto-style1"><strong>Ti.API.info("Create a Reachability Object");
     <br />
@@ -59,27 +59,27 @@ the require keyword to make the module accessible from JavaScript. To access thi
 <h2>&nbsp;</h2>
 <h2>Object Methods</h2>
 
-<table class="auto-style3" style="width: 100%">
+<table class="auto-style3" style="width: 92%">
 	<tr>
 		<td class="auto-style5" style="width: 207px; height: 22px;"><strong>Method Name</strong></td>
 		<td class="auto-style2" style="height: 22px"><strong>Description</strong></td>
 	</tr>
 	<tr>
 		<td class="auto-style4" style="width: 207px; height: 23px"><strong>
-		reachabilityWithHostName</strong></td>
-		<td class="auto-style4"  style="height: 23px">This method provides a 
-		boolean result if Local Wifi is enabled.</td>
-	</tr>
-	<tr>
-		<td class="auto-style4"  style="width: 207px; height: 23px"><strong>
-		reachabilityForLocalWiFi</strong></td>
+		<a href="ReachabilityWithHostName.html">reachabilityWithHostName</a></strong></td>
 		<td class="auto-style4"  style="height: 23px">This method takes a host 
 		name, such as www.apple.com and returns a boolean result if the host is 
 		reachable.</td>
 	</tr>
 	<tr>
 		<td class="auto-style4"  style="width: 207px; height: 23px"><strong>
-		hostNameReachableBy</strong></td>
+		<a href="ReachabilityForLocalWiFi.html">reachabilityForLocalWiFi</a></strong></td>
+		<td class="auto-style4"  style="height: 23px">This method provides a 
+		boolean result if Local Wifi is enabled.</td>
+	</tr>
+	<tr>
+		<td class="auto-style4"  style="width: 207px; height: 23px"><strong>
+		<a href="HostNameReachableBy.html">hostNameReachableBy</a></strong></td>
 		<td class="auto-style4"  style="height: 23px">This method takes a host 
 		name, such as www.benCoding.com and returns a constant with how it is 
 		reachable.&nbsp; This method returns a reachability constant shown 
@@ -88,7 +88,7 @@ the require keyword to make the module accessible from JavaScript. To access thi
 	</table>
 
 <h2>Object Constants</h2>
-<table class="auto-style3" style="width: 100%">
+<table class="auto-style3" style="width: 92%">
 	<tr>
 		<td class="auto-style2" style="width: 295px; height: 22px;"><strong>
 		Constant Name</strong></td>
@@ -119,47 +119,57 @@ the require keyword to make the module accessible from JavaScript. To access thi
 	</table>
 
 <h2>Example</h2>
-<div style="border-width: thin; border-style: solid; background-color: #E8E8E8;">
-	<p class="auto-style1"><strong>var networkHelpers = require('bencoding.network');
-	<br /><br />
-	Ti.API.info("Create a Reachability Object"); 
-	<br />
-	var reachability= networkHelpers.createReachability();	<br /><br />
-	Ti.API.info("Get reachabilityWithHostName => " + reachability.reachabilityWithHostName("www.apple.com"));
-	<br /><br />
-	Ti.API.info("Get reachabilityForLocalWiFi => " + reachability.reachabilityForLocalWiFi());	
-	<br /><br />
-	Ti.API.info("Get check how we are able to reach apple.com ");	
-	<br />
-	var hostReachableByType = reachability.hostNameReachableBy("www.apple.com");
-	<br />
-	Ti.API.info("Apple.com was reachable by  => " + hostReachableByType );	
-	<br />
-	</strong></p>
-	<p class="auto-style1"><strong>//Create a JavaScript helper function</strong></p>
-	<p class="auto-style1"><strong>function getReachableType(findType){<br />
-	var results = &quot;Oops something went wrong&quot;;<br />
-	<br />
-	if(findType==reachability.NETWORK_STATUS_NOT_REACHABLE){<br />
-	results=&quot;Not Reachable&quot;;<br />
-	</strong>}<strong><br />
-	<br />
-	if(findType==reachability.NETWORK_STATUS_WIFI){<br />
-	results=&quot;WiFi Network&quot;;<br />
-	</strong>}<strong><br />
-	<br />
-	if(findType==reachability.NEWORK_STATUS_WWAN){<br />
-	results=&quot;Mobile Network&quot;;<br />
-	</strong>}<strong><br />
-	<br />
-	return results;<br />
-	};
-	
-	</strong></p>
-	<p class="auto-style1"><strong>var reachableType=getReachableType(hostReachableByType);
-	</strong></p>
-	<p class="auto-style1"><strong>Ti.API.info("Reachable via => " + reachableType);
-	</strong></p>
+
+<div style="border-width: thin; border-style: solid; background-color: #E8E8E8;" class="auto-style1">
+	<div id="LC18" class="auto-style1">
+		<span class="nx"><br />
+		<strong>Ti</strong></span><span class="p"><strong>.</strong></span><span class="nx"><strong>API</strong></span><span class="p"><strong>.</strong></span><span class="nx"><strong>info</strong></span><span class="p"><strong>(</strong></span><span class="s2"><strong>&quot;Create 
+		a Reachability Object&quot;</strong></span><span class="p"><strong>);</strong></span></div>
+	<div id="LC19" class="auto-style1">
+		<span class="kd"><strong>var</strong></span> <span class="nx"><strong>
+		reachability</strong></span> <span class="o"><strong>=</strong></span>
+		<strong>networkHelpers</strong><span class="p"><strong>.</strong></span><span class="nx"><strong>createReachability</strong></span><span class="p"><strong>();</strong></span></div>
+	<div id="LC20" class="auto-style1">
+		<span class="nx"><strong><br />
+		Ti</strong></span><span class="p"><strong>.</strong></span><span class="nx"><strong>API</strong></span><span class="p"><strong>.</strong></span><span class="nx"><strong>info</strong></span><span class="p"><strong>(</strong></span><span class="s2"><strong>&quot;Get 
+		reachabilityWithHostName =&gt; &quot;</strong></span> <span class="o"><strong>+</strong></span>
+		<span class="nx"><strong>reachability</strong></span><span class="p"><strong>.</strong></span><span class="nx"><strong>reachabilityWithHostName</strong></span><span class="p"><strong>(</strong></span><span class="s2"><strong>&quot;www.apple.com&quot;</strong></span><span class="p"><strong>));</strong></span></div>
+	<div id="LC21" class="auto-style1">
+		<span class="nx"><strong><br />
+		Ti</strong></span><span class="p"><strong>.</strong></span><span class="nx"><strong>API</strong></span><span class="p"><strong>.</strong></span><span class="nx"><strong>info</strong></span><span class="p"><strong>(</strong></span><span class="s2"><strong>&quot;Get 
+		reachabilityForLocalWiFi =&gt; &quot;</strong></span> <span class="o"><strong>+</strong></span>
+		<span class="nx"><strong>reachability</strong></span><span class="p"><strong>.</strong></span><span class="nx"><strong>reachabilityForLocalWiFi</strong></span><span class="p"><strong>());</strong></span></div>
+	<div id="LC23" class="line">
+		<p class="auto-style1"><span class="kd"><strong>var</strong></span>
+		<span class="nx"><strong>hostReachableByType</strong></span>
+		<span class="o"><strong>=</strong></span> <span class="nx"><strong>
+		reachability</strong></span><span class="p"><strong>.</strong></span><span class="nx"><strong>hostNameReachableBy</strong></span><span class="p"><strong>(</strong></span><span class="s2"><strong>&quot;www.apple.com&quot;</strong></span><span class="p"><strong>);<br />
+		<span class="nx">Ti</span>.<span class="nx">API</span>.<span class="nx">info</span>(<span class="s2">&quot;Show 
+		how we are able to reach Apple=&gt; &quot;</span> <span class="o">+</span>
+		<span class="nx">hostReachableByType</span>);<br />
+		<br />
+		//A small JavaScript helper function to show how properties work<br />
+		function getReachableType(findType){<br />
+&nbsp;&nbsp;&nbsp; var results = &quot;Oops something went wrong&quot;;<br />
+		<br />
+&nbsp;&nbsp;&nbsp; if(findType==reachability.NETWORK_STATUS_NOT_REACHABLE){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; results=&quot;Not Reachable&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+		<br />
+&nbsp;&nbsp;&nbsp; if(findType==reachability.NETWORK_STATUS_WIFI){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; results=&quot;WiFi Network&quot;;<br />
+&nbsp;&nbsp;&nbsp; }<br />
+		<br />
+&nbsp;&nbsp;&nbsp; if(findType==reachability.NEWORK_STATUS_WWAN){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; results=&quot;Mobile Network&quot;;<br />
+&nbsp;&nbsp;&nbsp; }<br />
+		<br />
+&nbsp;&nbsp; return results;<br />
+		};</strong></span></p>
+		<p class="auto-style1"><span class="p"><strong><br />
+		var reachableType=getReachableType(hostReachableByType);<br />
+		Ti.API.info(&quot;Reachable via =&gt; &quot; + reachableType);</strong></span></p>
+	</div>
 
 </div>
 
