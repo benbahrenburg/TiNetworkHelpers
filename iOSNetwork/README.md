@@ -3,8 +3,8 @@
 Welcome to the benCoding Network Helpers for Titanium project
 
 <h2>Before you start</h2>
-* You need Titanium 1.8.1 or greater.  I recommend downloading the CI build available here.  When downloading please make sure you select the 1.8.X branch.  For instructions on how to install a CI Build please read [this](https://wiki.appcelerator.org/display/guides/Installing+Titanium+SDK+Continuous+Builds).
-* This module has been tested only on iOS 5.  There isn’t any iOS 5 specific features referenced, so it should work on iOS 4.3+.
+* You need Titanium 1.8.1 or greater.
+* This module requires iOS 4.2+.
 
 <h2>Setup </h2>
 
