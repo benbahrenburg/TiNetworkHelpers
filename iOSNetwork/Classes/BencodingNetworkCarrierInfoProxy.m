@@ -19,7 +19,9 @@
 {
 	// This is the designated initializer method and will always be called
 	// when the proxy is created.
-    
+    if (self = [super init])
+    {
+        
 #if TARGET_IPHONE_SIMULATOR
     carrierName = [@"simulator" retain];
     allowsVOIP =[NUMBOOL(NO) retain];
@@ -58,8 +60,9 @@
     //NSLog(@"Mobile Country Code (MCC): %@", mobileCountryCode);
     //NSLog(@"Mobile Network Code (MNC): %@", mobileNetworkCode);    
     //NSLog(@"Carrier ISO Code (ISO): %@", isoCountryCode);
+    }
     
-	return [super init];
+    return self;
 }
 
 -(void)_destroy

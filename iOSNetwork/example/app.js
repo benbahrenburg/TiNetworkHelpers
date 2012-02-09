@@ -1,7 +1,7 @@
 var benCodingNetwork = require('bencoding.network');
 Ti.API.info("module is => " + benCodingNetwork);
 
-Ti.API.info("Create a Carrier Info Object");
+Ti.API.info("Create a new Carrier Info Object");
 var carrierInfo = benCodingNetwork.createCarrierInfo();
 Ti.API.info("Get carrier name => " + carrierInfo.carrierName);
 Ti.API.info("Get mobile country code => " + carrierInfo.mobileCountryCode);
@@ -9,13 +9,13 @@ Ti.API.info("Get mobile network code => " + carrierInfo.mobileNetworkCode);
 Ti.API.info("Get ISO country code for cellular service provider => " + carrierInfo.isoCountryCode);
 Ti.API.info("Mobile service provider supports VOIP => " + carrierInfo.allowsVOIP);
 
-Ti.API.info("Create a Current Network Info Object");
+Ti.API.info("Create a new Current Network Info Object");
 var currentNetwork = benCodingNetwork.createCurrentNetwork();
 Ti.API.info("Get SSID => " + currentNetwork.SSID);
 Ti.API.info("Get BSSID => " + currentNetwork.BSSID);
 
 
-Ti.API.info("Create a Reachability Object");
+Ti.API.info("Create a new Reachability Object");
 var reachability = benCodingNetwork.createReachability();
 Ti.API.info("Get reachabilityWithHostName => " + reachability.reachabilityWithHostName("www.apple.com"));
 Ti.API.info("Get reachabilityForLocalWiFi => " + reachability.reachabilityForLocalWiFi());
@@ -55,7 +55,7 @@ var carrierLabel = Ti.UI.createLabel({
 	color:'#000',
 	left:10,
 	text:'Carrier Name: ' + carrierInfo.carrierName,
-	height:40,
+	height:30,
 	width:'auto',
 	textAlign:'left',
 	font:{
@@ -66,11 +66,11 @@ var carrierLabel = Ti.UI.createLabel({
 container.add(carrierLabel);	
  
 var mccLabel = Ti.UI.createLabel({
-	top:20,
+	top:10,
 	color:'#000',
 	left:10,
 	text:'Carrier Country Code: ' + carrierInfo.mobileCountryCode,
-	height:40,
+	height:30,
 	width:'auto',
 	textAlign:'left',
 	font:{
@@ -81,11 +81,11 @@ var mccLabel = Ti.UI.createLabel({
 container.add(mccLabel);	
 
 var nccLabel = Ti.UI.createLabel({
-	top:20,
+	top:10,
 	color:'#000',
 	left:10,
 	text:'Network Country Code: ' + carrierInfo.mobileNetworkCode,
-	height:40,
+	height:30,
 	width:'auto',
 	textAlign:'left',
 	font:{
@@ -96,11 +96,11 @@ var nccLabel = Ti.UI.createLabel({
 container.add(nccLabel);
 
 var isoLabel = Ti.UI.createLabel({
-	top:20,
+	top:10,
 	color:'#000',
 	left:10,
 	text:'Providers ISO Code: ' + carrierInfo.isoCountryCode,
-	height:40,
+	height:30,
 	width:'auto',
 	textAlign:'left',
 	font:{
@@ -111,11 +111,11 @@ var isoLabel = Ti.UI.createLabel({
 container.add(isoLabel);
 
 var voipLabel = Ti.UI.createLabel({
-	top:20,
+	top:10,
 	color:'#000',
 	left:10,
 	text:'Providers Supports VOIP: ' + carrierInfo.allowsVOIP,
-	height:40,
+	height:30,
 	width:'auto',
 	textAlign:'left',
 	font:{
@@ -126,11 +126,11 @@ var voipLabel = Ti.UI.createLabel({
 container.add(voipLabel);
 
 var SSIDLabel = Ti.UI.createLabel({
-	top:20,
+	top:10,
 	color:'#000',
 	left:10,
 	text:'SSID: ' + currentNetwork.SSID,
-	height:40,
+	height:30,
 	width:'auto',
 	textAlign:'left',
 	font:{
@@ -142,11 +142,11 @@ var SSIDLabel = Ti.UI.createLabel({
 container.add(SSIDLabel);
 
 var BSSIDLabel = Ti.UI.createLabel({
-	top:20,
+	top:10,
 	color:'#000',
 	left:10,
 	text:'BSSID: ' + currentNetwork.BSSID,
-	height:40,
+	height:30,
 	width:'auto',
 	textAlign:'left',
 	font:{
@@ -156,5 +156,38 @@ var BSSIDLabel = Ti.UI.createLabel({
 });	
 
 container.add(BSSIDLabel);	
+
+var wifiReachableLabel = Ti.UI.createLabel({
+	top:10,
+	color:'#000',
+	left:10,
+	text:'Wi Fi reachable? ' + ((reachability.reachabilityForLocalWiFi()) ? "Yes" : "No"),
+	height:30,
+	width:'auto',
+	textAlign:'left',
+	font:{
+		fontSize:16,
+		fontWeight:'bold'
+	}
+});	
+
+container.add(wifiReachableLabel);	
+
+
+var appleReachableLabel = Ti.UI.createLabel({
+	top:10,
+	color:'#000',
+	left:10,
+	text:'apple.com reachable? ' + ((reachability.reachabilityWithHostName("www.apple.com")) ? "Yes" : "No"),
+	height:30,
+	width:'auto',
+	textAlign:'left',
+	font:{
+		fontSize:16,
+		fontWeight:'bold'
+	}
+});	
+
+container.add(appleReachableLabel);	
 
 win.open();

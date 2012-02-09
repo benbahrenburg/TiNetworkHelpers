@@ -68,9 +68,12 @@ def generate_doc(config):
 	for file in os.listdir(docdir):
 		if file in ignoreFiles or os.path.isdir(os.path.join(docdir, file)):
 			continue
-		md = open(os.path.join(docdir,file)).read()
-		html = markdown.markdown(md)
-		documentation.append({file:html});
+		html = open(os.path.join(docdir,file)).read()
+		if file.lower().endswith('.md'):
+			html = markdown.markdown(html)
+		else:
+			documentation.append({file:html});
+
 	return documentation
 
 def compile_js(manifest,config):
