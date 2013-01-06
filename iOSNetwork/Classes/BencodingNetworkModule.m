@@ -16,17 +16,7 @@
 // this is generated for your module, please do not change it
 -(id)moduleGUID
 {
-    bool marketPlace=YES;
-    
-    if(marketPlace)
-    {
-        //GUID for the Appcelerator Markplace
-        return @"223684f6-a21f-451f-aa78-d04eef3781c1";
-    }else{
-        //Full open source version
-        return @"4637EC6A-93FD-4B64-9994-13AEAA4EA4E2";
-    }
-    
+    return @"2016a336-bc2e-494a-b112-98d6edd999de";
 }
 
 // this is generated for your module, please do not change it

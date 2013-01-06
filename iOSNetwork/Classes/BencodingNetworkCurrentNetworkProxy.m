@@ -10,9 +10,11 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #include <ifaddrs.h>
 #include <arpa/inet.h>
+#include <stdio.h> 
+#include <time.h> 
+#include <dlfcn.h>
 @implementation BencodingNetworkCurrentNetworkProxy
 @synthesize SSID, BSSID;
-
 
 -(id)init
 {
@@ -23,7 +25,7 @@
             CFArrayRef interfacesAr = CNCopySupportedInterfaces();
             CFDictionaryRef captiveNtwrkDict = 
             CNCopyCurrentNetworkInfo(CFArrayGetValueAtIndex(interfacesAr, 0));
-            NSDictionary *dict = (__bridge NSDictionary*) captiveNtwrkDict;
+            NSDictionary *dict = ( NSDictionary*) captiveNtwrkDict;
             CFRelease(interfacesAr);//Use CFRelease here instead of your standard release
             //Uncomment to made debugging easier
             //NSLog(@"dict before we put into properties: %@", dict);            
@@ -32,13 +34,13 @@
             
             //Uncomment to made debugging easier
             //NSLog(@"SSID: %@", SSID);
-            //NSLog(@"BSSID: %@", BSSID); 
+            //NSLog(@"BSSID: %@", BSSID);             
             
             [dict release];            
             [helpers release];
         }
         @catch (NSException * e) {
-            NSLog(@"Exception: %@", e);
+            NSLog(@"Init Exception: %@", e);
         }                
     }
     
