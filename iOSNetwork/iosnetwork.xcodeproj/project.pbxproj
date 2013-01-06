@@ -26,16 +26,14 @@
 		24DD6CFA1134B3F500162E58 /* BencodingNetworkModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* BencodingNetworkModule.m */; };
 		24DE9E1111C5FE74003F90F6 /* BencodingNetworkModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* BencodingNetworkModuleAssets.h */; };
 		24DE9E1211C5FE74003F90F6 /* BencodingNetworkModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* BencodingNetworkModuleAssets.m */; };
-		4344FACA14D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4344FAC614D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.h */; };
-		4344FACB14D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344FAC714D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.m */; };
-		4344FACC14D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4344FAC814D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.h */; };
-		4344FACD14D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344FAC914D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.m */; };
-		4344FAD014D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4344FACE14D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.h */; };
-		4344FAD114D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4344FACF14D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.m */; };
 		4344FAD314D5B81F00FFA9E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4344FAD214D5B81F00FFA9E5 /* SystemConfiguration.framework */; };
+		439684301699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4396842C1699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.h */; };
+		439684311699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4396842D1699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.m */; };
+		439684321699FEC3002E3B20 /* BencodingNetworkCarrierProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4396842E1699FEC3002E3B20 /* BencodingNetworkCarrierProxy.h */; };
+		439684331699FEC3002E3B20 /* BencodingNetworkCarrierProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4396842F1699FEC3002E3B20 /* BencodingNetworkCarrierProxy.m */; };
 		43C9142B14D4DF5C00843AF4 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C9142A14D4DF5C00843AF4 /* CoreTelephony.framework */; };
-		43C9143214D4E11300843AF4 /* BencodingNetworkHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 43C9143014D4E11200843AF4 /* BencodingNetworkHelpers.h */; };
-		43C9143314D4E11300843AF4 /* BencodingNetworkHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C9143114D4E11200843AF4 /* BencodingNetworkHelpers.m */; };
+		43DD9A6C1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 43DD9A6A1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.h */; };
+		43DD9A6D1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43DD9A6B1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.m */; };
 		AA747D9F0F9514B9006C5449 /* BencodingNetwork_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* BencodingNetwork_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -56,16 +54,14 @@
 		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
 		24DE9E0F11C5FE74003F90F6 /* BencodingNetworkModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BencodingNetworkModuleAssets.h; path = Classes/BencodingNetworkModuleAssets.h; sourceTree = "<group>"; };
 		24DE9E1011C5FE74003F90F6 /* BencodingNetworkModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BencodingNetworkModuleAssets.m; path = Classes/BencodingNetworkModuleAssets.m; sourceTree = "<group>"; };
-		4344FAC614D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BencodingNetworkCarrierInfoProxy.h; path = Classes/BencodingNetworkCarrierInfoProxy.h; sourceTree = "<group>"; };
-		4344FAC714D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BencodingNetworkCarrierInfoProxy.m; path = Classes/BencodingNetworkCarrierInfoProxy.m; sourceTree = "<group>"; };
-		4344FAC814D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BencodingNetworkCurrentNetworkProxy.h; path = Classes/BencodingNetworkCurrentNetworkProxy.h; sourceTree = "<group>"; };
-		4344FAC914D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BencodingNetworkCurrentNetworkProxy.m; path = Classes/BencodingNetworkCurrentNetworkProxy.m; sourceTree = "<group>"; };
-		4344FACE14D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BencodingNetworkReachabilityProxy.h; path = Classes/BencodingNetworkReachabilityProxy.h; sourceTree = "<group>"; };
-		4344FACF14D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BencodingNetworkReachabilityProxy.m; path = Classes/BencodingNetworkReachabilityProxy.m; sourceTree = "<group>"; };
 		4344FAD214D5B81F00FFA9E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4396842C1699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BencodingNetworkCaptiveNetworkProxy.h; path = Classes/BencodingNetworkCaptiveNetworkProxy.h; sourceTree = "<group>"; };
+		4396842D1699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BencodingNetworkCaptiveNetworkProxy.m; path = Classes/BencodingNetworkCaptiveNetworkProxy.m; sourceTree = "<group>"; };
+		4396842E1699FEC3002E3B20 /* BencodingNetworkCarrierProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BencodingNetworkCarrierProxy.h; path = Classes/BencodingNetworkCarrierProxy.h; sourceTree = "<group>"; };
+		4396842F1699FEC3002E3B20 /* BencodingNetworkCarrierProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BencodingNetworkCarrierProxy.m; path = Classes/BencodingNetworkCarrierProxy.m; sourceTree = "<group>"; };
 		43C9142A14D4DF5C00843AF4 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		43C9143014D4E11200843AF4 /* BencodingNetworkHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BencodingNetworkHelpers.h; path = Classes/BencodingNetworkHelpers.h; sourceTree = "<group>"; };
-		43C9143114D4E11200843AF4 /* BencodingNetworkHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BencodingNetworkHelpers.m; path = Classes/BencodingNetworkHelpers.m; sourceTree = "<group>"; };
+		43DD9A6A1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BencodingNetworkReachabilityProxy.h; path = Classes/BencodingNetworkReachabilityProxy.h; sourceTree = "<group>"; };
+		43DD9A6B1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BencodingNetworkReachabilityProxy.m; path = Classes/BencodingNetworkReachabilityProxy.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* BencodingNetwork_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BencodingNetwork_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libBencodingNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBencodingNetwork.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,18 +113,16 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4344FACE14D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.h */,
-				4344FACF14D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.m */,
-				4344FAC614D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.h */,
-				4344FAC714D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.m */,
-				4344FAC814D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.h */,
-				4344FAC914D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.m */,
+				4396842C1699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.h */,
+				4396842D1699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.m */,
+				4396842E1699FEC3002E3B20 /* BencodingNetworkCarrierProxy.h */,
+				4396842F1699FEC3002E3B20 /* BencodingNetworkCarrierProxy.m */,
+				43DD9A6A1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.h */,
+				43DD9A6B1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.m */,
 				24DE9E0F11C5FE74003F90F6 /* BencodingNetworkModuleAssets.h */,
 				24DE9E1011C5FE74003F90F6 /* BencodingNetworkModuleAssets.m */,
 				24DD6CF71134B3F500162E58 /* BencodingNetworkModule.h */,
 				24DD6CF81134B3F500162E58 /* BencodingNetworkModule.m */,
-				43C9143014D4E11200843AF4 /* BencodingNetworkHelpers.h */,
-				43C9143114D4E11200843AF4 /* BencodingNetworkHelpers.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -152,10 +146,9 @@
 				AA747D9F0F9514B9006C5449 /* BencodingNetwork_Prefix.pch in Headers */,
 				24DD6CF91134B3F500162E58 /* BencodingNetworkModule.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* BencodingNetworkModuleAssets.h in Headers */,
-				43C9143214D4E11300843AF4 /* BencodingNetworkHelpers.h in Headers */,
-				4344FACA14D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.h in Headers */,
-				4344FACC14D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.h in Headers */,
-				4344FAD014D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.h in Headers */,
+				43DD9A6C1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.h in Headers */,
+				439684301699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.h in Headers */,
+				439684321699FEC3002E3B20 /* BencodingNetworkCarrierProxy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,10 +221,9 @@
 			files = (
 				24DD6CFA1134B3F500162E58 /* BencodingNetworkModule.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* BencodingNetworkModuleAssets.m in Sources */,
-				43C9143314D4E11300843AF4 /* BencodingNetworkHelpers.m in Sources */,
-				4344FACB14D5B7AE00FFA9E5 /* BencodingNetworkCarrierInfoProxy.m in Sources */,
-				4344FACD14D5B7AE00FFA9E5 /* BencodingNetworkCurrentNetworkProxy.m in Sources */,
-				4344FAD114D5B7C700FFA9E5 /* BencodingNetworkReachabilityProxy.m in Sources */,
+				43DD9A6D1684BD6A0092A818 /* BencodingNetworkReachabilityProxy.m in Sources */,
+				439684311699FEC3002E3B20 /* BencodingNetworkCaptiveNetworkProxy.m in Sources */,
+				439684331699FEC3002E3B20 /* BencodingNetworkCarrierProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

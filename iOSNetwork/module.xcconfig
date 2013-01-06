@@ -1,1 +1,1 @@
-OTHER_LDFLAGS=$(inherited) -framework CoreTelephony
+OTHER_LDFLAGS=$(inherited) -framework CoreTelephony -framework SystemConfiguration

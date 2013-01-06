@@ -3,17 +3,17 @@
 Welcome to the benCoding Network Helpers for Titanium project
 
 <h2>Before you start</h2>
-* You need Titanium 1.8.1 or greater.
-* This module requires iOS 4.2+.
+* You need Titanium 2.1.4 or greater.
+* This module requires iOS 5+.
 
 <h2>Setup </h2>
 
-* Download the latest release from the releases folder ( or you can build it yourself )
+* Download the latest release from the dist folder ( or you can build it yourself )
 * Install the bencoding.network module. If you need help here is a "How To" [guide](https://wiki.appcelerator.org/display/guides/Configuring+Apps+to+Use+Modules). 
 * You can now use the module via the commonJS require method, example shown below.
 
 <pre><code>
-var benCodingNetwork = require('bencoding.network');
+var network = require('bencoding.network');
 </code></pre>
 
 Now we have the module installed and avoid in our project we can start to use the components, see the feature guide below for details.
@@ -28,15 +28,20 @@ Please see the example folder for a "how to" code example.
 The benCoding Network Helpers provides access to CarrierInfo, CurrentNetworkInfo, 
 Apple's Reachability, and more.
 
-<h2>CarrierInfo</h2>
-CarrierInfo provides access to the native CTTelephonyNetworkInfo framework object. Please find an example on how to create this below:
+<h2>Carrier</h2>
+Carrier object provides access to the native CTTelephonyNetworkInfo framework object. Please find an example on how to create this below:
 <pre><code>
-Ti.API.info("Create a new Carrier Info Object");
-var carrierInfo = benCodingNetwork.createCarrierInfo();
+Ti.API.info("Create a new Carrier Object");
+var carrier = network.createCarrier();
+Ti.API.info("Call the findInfo method to return the carrier details");
+var carrierInfo = carrier.findInfo();
 </code></pre>
 <br />
-The following properties are currently available:
-
+The findInfo method returns an object with the following properties:
+<b>isSimulator</b> - Identifies if you are running on the simulator. Please note the CTTelephonyNetworkInfo framework does not work on the simulator so fake values are returned for testing purposes.
+Please find an example on how to create this below:
+<pre><code>
+Ti.API.info("Are we on the simulator? => " + carrierInfo.isSimulator);
 <b>carrierName</b> - Provides access to the carrier name associated with the device's SIM.
 Please find an example on how to create this below:
 <pre><code>
@@ -65,13 +70,21 @@ Ti.API.info("Get ISO country code for cellular service provider => " + carrierIn
 Ti.API.info("Mobile service provider supports VOIP => " + carrierInfo.allowsVOIP);
 </code></pre>
 <br />
-<h2>CurrentNetwork</h2>
-CurrentNetwork provides access to the native CNCopyCurrentNetworkInfo object. Please find an example on how to create this below:
+<h2>CaptiveNetwork</h2>
+CaptiveNetwork provides access to the native CaptiveNetwork framework. Please find an example on how to create this below:
 <pre><code>
-Ti.API.info("Create a new Current Network Info Object");
-var currentNetwork = benCodingNetwork.createCurrentNetwork();
+Ti.API.info("Create a new CaptiveNetwork Object");
+var captiveNetwork = network.createCaptiveNetwork();
+Ti.API.info("Call the findInfo method to return the network details");
+var currentNetwork = captiveNetwork.findInfo();
 </code></pre>
 <br />
+The findInfo method returns an object with the following properties:
+<b>isSimulator</b> - Identifies if you are running on the simulator. Please note the CaptiveNetwork framework does not work on the simulator so fake values are returned for testing purposes.
+Please find an example on how to create this below:
+<pre><code>
+Ti.API.info("Are we on the simulator? => " + currentNetwork.isSimulator);
+</code></pre>
 <b>SSID</b> - Provides access the SSID the device is currently connected.
 Please find an example on how to create this below:
 <pre><code>
@@ -86,56 +99,6 @@ Ti.API.info("Get BSSID => " + currentNetwork.BSSID);
 </code></pre>
 <br />
 
-<h2>Reachability</h2>
-
-The Reachability component provides a wrapper for the Apple Reachability module. 
-For more about Reachability please see the Apple documentation [here](http://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html).
-
-Please find an example on how to create this below:
-<pre><code>
-Ti.API.info("Create a new Reachability Object");
-var reachability = benCodingNetwork.createReachability();
-</code></pre>
-<br />
-
-<b>reachabilityForLocalWiFi</b> - This method provides a boolean result if Local Wifi is enabled. Please find an example on how to create this below:
-<pre><code>
-Ti.API.info("Get reachabilityForLocalWiFi => " + reachability.reachabilityForLocalWiFi());
-</code></pre>
-<br />
-
-<b>reachabilityWithHostName</b> - This method takes a host name, such as www.benCoding.com and returns a boolean result if the host is reachable. Please find an example on how to create this below:
-<pre><code>
-Ti.API.info("Get reachabilityWithHostName => " + reachability.reachabilityWithHostName("www.apple.com"));
-</code></pre>
-<br />
-
-<b>hostNameReachableBy</b> - This method takes a host name, such as www.apple.com and returns a constant with how it is reachable.  Please find an example on how to create this below:
-<pre><code>
-var hostReachableByType = reachability.hostNameReachableBy("www.apple.com");
-
-function getReachableType(findType){
-	var results = "Oops something went wrong";
-	
-	if(findType==reachability.NETWORK_STATUS_NOT_REACHABLE){
-		results="Not Reachable";
-	}	
-	
-	if(findType==reachability.NETWORK_STATUS_WIFI){
-		results="WiFi Network";
-	}	
-
-	if(findType==reachability.NEWORK_STATUS_WWAN){
-		results="Mobile Network";
-	}		
-	
-	return results;
-};
-
-var reachableType=getReachableType(hostReachableByType);
-Ti.API.info("Reachable via => " + reachableType);
-</code></pre>
-<br />
  
 
 <h2>Licensing & Support</h2>
