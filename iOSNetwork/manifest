@@ -2,8 +2,9 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.81
+version: 0.85
 apiversion: 2
+architectures: armv7 arm64 i386 x86_64
 description: benCoding.Network provides access to network helpers for CarrierInfo, CurrentNetworkInfo, Apple's Reachability, and more
 author: benCoding.Com
 license: benCoding.Network is licensed under the OSI approved Apache Public License (version 2). Please see the LICENSE file for specific details.
@@ -15,4 +16,4 @@ name: iosnetwork
 moduleid: bencoding.network
 guid: 2016a336-bc2e-494a-b112-98d6edd999de
 platform: iphone
-minsdk: 3.1.1
+minsdk: 3.5.0.GA

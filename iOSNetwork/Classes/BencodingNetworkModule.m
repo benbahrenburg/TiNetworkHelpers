@@ -46,11 +46,6 @@
 
 #pragma mark Cleanup 
 
--(void)dealloc
-{
-	// release any resources that have been retained by the module
-	[super dealloc];
-}
 
 #pragma mark Internal Memory Management
 
