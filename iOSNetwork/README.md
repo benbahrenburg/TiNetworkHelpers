@@ -42,6 +42,7 @@ The findInfo method returns an object with the following properties:
 Please find an example on how to create this below:
 <pre><code>
 Ti.API.info("Are we on the simulator? => " + carrierInfo.isSimulator);
+</code></pre>
 <b>carrierName</b> - Provides access to the carrier name associated with the device's SIM.
 Please find an example on how to create this below:
 <pre><code>
