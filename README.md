@@ -2,6 +2,9 @@
  
 Welcome to the benCoding.Network Helpers for Titanium project
 
+<h2> Important iOS9+</h2>
+
+The NetworkCaptiveNetwork functionality has been depreciated by Apple in iOS9.  No replacement APIs where provided, so you will need to find another way to get this information.
 
 <h2>Features</h2>
 <hr />
