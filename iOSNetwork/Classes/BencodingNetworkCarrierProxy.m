@@ -11,7 +11,7 @@
 
 
 -(NSDictionary*)findInfo:(id)unused
-{
+{    
     NSString * informationUnknown = @"unknown";
     
 #if TARGET_IPHONE_SIMULATOR
