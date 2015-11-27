@@ -12,17 +12,11 @@
 #include <stdio.h>
 #include <time.h>
 #include <dlfcn.h>
-#import "TiUtils.h"
 
 @implementation BencodingNetworkCaptiveNetworkProxy
 
 -(NSDictionary*)findInfo:(id)unused
 {
-    if([UIImage instancesRespondToSelector:@selector(flipsForRightToLeftLayoutDirection)]){        
-        NSLog(@"[ERROR] Apple has removed the CaptiveNetwork in iOS9. There is not work around provided in this module. You will need to create a module using NEHotspotHelper and request a custom entitlement from Apple.")
-        
-        return;
-    }
     
     NSString * informationUnknown = @"unknown";
     @try {
